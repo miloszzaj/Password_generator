@@ -1,15 +1,23 @@
  html {
      font-family: arial;
+     background-color: rgb(24, 114, 114);
  }
 
  button {
      display: block;
      margin: 20px auto 50px;
-     background-color: #fff;
+     background-color: rgb(97, 206, 197);
      border: 1px solid rgb(0, 0, 0);
      padding: 20px 50px;
      font-size: 30px;
+     outline: none;
 
+ }
+
+ section {
+     width: 200px;
+
+     margin: 0 auto;
  }
 
  div {

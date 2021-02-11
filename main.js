@@ -24,7 +24,7 @@ const codesGenerator = () => {
 			div.textContent += code[indexText];
 			indexText += 1;
 			if (indexText === 10) clearInterval(typing);
-		}, 1100);
+		}, 100);
 
 		section.appendChild(div);
 	}
