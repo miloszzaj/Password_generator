@@ -1,4 +1,4 @@
-const chars = 'AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ0123456789?.,;:!@$%&()<>?|><+=';
+const chars = 'AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ0123456789?;:!@$%&()[]<>?|><+=';
 
 const btn = document.querySelector('button');
 const section = document.querySelector('section');
@@ -8,26 +8,46 @@ const charsNumber = 10;
 
 const codesGenerator = () => {
 	section.innerHTML = '';
-
+    let piwo = 0;
 	for (let i = 0; i < codesNumber; i++) {
 		let code = '';
-		for (let j = 0; j < charsNumber; j++) {
+			for (let j = 0; j < charsNumber; j++) {
 			const index = Math.floor(Math.random() * chars.length);
 			code += chars[index];
 		}
 
+	console.log(code);
 		const div = document.createElement('div');
 
-		let indexText = 0;
+        section.appendChild(div);
+const elo = document.getElementsByTagName('div')[piwo];
+		const el = document.createElement('button');
+		elo.style.display = "inline";
+		el.style.display = "inline";
 
-		const typing = setInterval(() => {
+		elo.before(el, div);
+		piwo++;
+		let indexText = 0;
+		 	const typing = setInterval(() => {
 			div.textContent += code[indexText];
 			indexText += 1;
 			if (indexText === 10) clearInterval(typing);
 		}, 100);
-
-		section.appendChild(div);
-	}
+		
 };
-
+}
+// const div = document.querySelector('div');
+// // div.innerText =
+// // const el = document.createElement('div');
+// // div.appendChild(el);
+// const clip = document.createElement('button');
+// clip.innerText = 'kopiuj';
+// // div.insertBefore(clip, el); 
+// div.appendChild(clip);
+// // console.log(clip);
+// // div.appendChild(clip);
+// console.log(section);};
 btn.addEventListener('click', codesGenerator);
+
+
+

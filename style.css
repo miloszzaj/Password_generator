@@ -1,6 +1,6 @@
  html {
      font-family: arial;
-     background-color: rgb(24, 114, 114);
+     background-color: rgb(40, 148, 148);
  }
 
  button {
@@ -15,7 +15,7 @@
  }
 
  section {
-     width: 200px;
+     width: 500px;
 
      margin: 0 auto;
  }
