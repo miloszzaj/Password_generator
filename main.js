@@ -8,7 +8,7 @@ const charsNumber = 10;
 
 const codesGenerator = () => {
 	section.innerHTML = '';
-    let piwo = 0;
+    let number = 0;
 	for (let i = 0; i < codesNumber; i++) {
 		let code = '';
 			for (let j = 0; j < charsNumber; j++) {
@@ -16,20 +16,31 @@ const codesGenerator = () => {
 			code += chars[index];
 		}
 
-	console.log(code);
+		console.log(code);
 
 		const divBig = document.createElement('div');
+		divBig.classList.add("big");
 		section.appendChild(divBig);
 		const div = document.createElement('div');
 		div.classList.add("small");
+		div.type = "text";
 		divBig.appendChild(div);
 	
-        const elo = document.getElementsByClassName("small")[piwo];
+        const elo = document.getElementsByClassName("small")[number];
 		const el = document.createElement('button');
-		elo.style.display = "inline";
-		el.style.display = "inline";
-		divBig.before(el, elo);
-		piwo++;
+		el.innerText = "Kopiuj";
+		el.classList.add("copy");
+
+		div.before(el);
+		number++;
+
+		const copyText = () => {
+			const sth = document.querySelector(".small");
+			console.log(sth);
+			sth.select();
+			sth.execCommand("copy")
+		};
+		el.addEventListener('click', copyText);
 
 			let indexText = 0;
 			const typing = setInterval(() => {
@@ -39,7 +50,8 @@ const codesGenerator = () => {
 		}, 100);
 		
 };
-}
+};
+
 // const div = document.querySelector('div');
 // // div.innerText =
 // // const el = document.createElement('div');
