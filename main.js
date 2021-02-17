@@ -17,18 +17,22 @@ const codesGenerator = () => {
 		}
 
 	console.log(code);
-		const div = document.createElement('div');
 
-        section.appendChild(div);
-const elo = document.getElementsByTagName('div')[piwo];
+		const divBig = document.createElement('div');
+		section.appendChild(divBig);
+		const div = document.createElement('div');
+		div.classList.add("small");
+		divBig.appendChild(div);
+	
+        const elo = document.getElementsByClassName("small")[piwo];
 		const el = document.createElement('button');
 		elo.style.display = "inline";
 		el.style.display = "inline";
-
-		elo.before(el, div);
+		divBig.before(el, elo);
 		piwo++;
-		let indexText = 0;
-		 	const typing = setInterval(() => {
+
+			let indexText = 0;
+			const typing = setInterval(() => {
 			div.textContent += code[indexText];
 			indexText += 1;
 			if (indexText === 10) clearInterval(typing);

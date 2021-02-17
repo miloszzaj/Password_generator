@@ -1,12 +1,12 @@
  html {
      font-family: arial;
-     background-color: rgb(40, 148, 148);
+     background-color: rgb(161, 109, 177);
  }
 
  button {
      display: block;
      margin: 20px auto 50px;
-     background-color: rgb(97, 206, 197);
+     background-color: rgb(255, 255, 255);
      border: 1px solid rgb(0, 0, 0);
      padding: 20px 50px;
      font-size: 30px;
