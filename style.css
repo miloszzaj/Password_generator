@@ -1,73 +1,79 @@
- html {
-     font-family: arial;
-     background-color: rgb(161, 109, 177);
-     
- }
- body {
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cinzel', serif;
+}
+
+html {
+    font-family: arial;
+    background-image: linear-gradient(to right, rgb(105, 57, 182), rgb(226, 134, 230));
+}
+
+body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(8, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
- }
+}
 
- .btn {
-     display: block;
-     grid-area: 2 / 2 / 3 / 4; 
-     /* margin: 20px auto 50px; */
-     background-color: rgb(105, 57, 182);
-     border: 1px solid rgb(0, 0, 0);
-     border-radius: 5px;
-     padding: 20px;
-     font-size: 30px;
-     outline: none;
-
- }
-
- section {
-     /* display: block; */
-     grid-area: 3 / 2 / 8 / 4;
-     width: 100%;
-     margin: 0 ;
-     display: flex;
-flex-direction: column;
- }
-
- div {
-     margin: 10px;
-     font-size: 22px;
- }
- .big {
+.btn {
+    display: block;
+    grid-area: 2 / 2 / 3 / 4; 
+    background-color: rgb(105, 57, 182);
     border: 1px solid rgb(0, 0, 0);
-background-color: #fff;
-padding: 20px;
-
-display: flex;
-flex-direction: row;
-justify-content: center ;
-align-content: center; }
-
- .copy {
-     background-color: rgb(87, 42, 79);
-     border: 1px solid rgb(0, 0, 0);
-     margin: 20px auto;
-     border-radius: 5px;
-
-      /* display: inline;  */
-     width: 50%; 
-         color: white;
-     font-size: 30px;
-     text-align: center;
- }
-
- .small {
-     /* display: inline;  */
-     border: 1px solid rgb(0, 0, 0);
-     padding: 20px;
-     margin: 20px auto;
-     width: 50%; 
+    border-radius: 5px;
+    padding: 20px;
     font-size: 30px;
-     border-radius: 5px;
-background-color: rgb(226, 134, 230);
-text-align: center; 
- }
+    outline: none;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+
+section {
+    grid-area: 3 / 2 / 8 / 4;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.big {
+    display: flex;
+    flex-direction: row;
+    justify-content: center ;
+    align-content: center; 
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(116, 93, 168);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.copy {
+    flex: 1;
+    background-color: rgb(87, 42, 79);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    color: rgb(240, 239, 239);
+    font-size: 30px;
+    text-align: center;
+}
+
+.small {
+    flex: 3;
+    background-color: rgb(226, 134, 230);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center; 
+}
+
+@media (max-width: 700px) {
+    .copy {
+        font-size: 15px;
+    }
+    
+    .small {
+        font-size: 15px;
+    }
+}
