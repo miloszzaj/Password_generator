@@ -1,68 +1,52 @@
-const chars = 'AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ0123456789?;:!@$%&()[]<>?|><+=';
+const chars = 'AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ0123456789?;:!$%&()[]<>?|><+=';
 
 const btn = document.querySelector('button');
 const section = document.querySelector('section');
 
-const codesNumber = 5;
-const charsNumber = 10;
+const codesNumber = 5
+const charsNumber = 10
 
 const codesGenerator = () => {
-	section.innerHTML = '';
+	section.innerHTML = ''
     let number = 0;
 	for (let i = 0; i < codesNumber; i++) {
-		let code = '';
+		let code = ''
 			for (let j = 0; j < charsNumber; j++) {
 			const index = Math.floor(Math.random() * chars.length);
-			code += chars[index];
+			code += chars[index]
 		}
+		console.log(code)
 
-		console.log(code);
+		const divBig = document.createElement('div')
+		divBig.classList.add("big")
+		section.appendChild(divBig)
 
-		const divBig = document.createElement('div');
-		divBig.classList.add("big");
-		section.appendChild(divBig);
-		const div = document.createElement('div');
-		div.classList.add("small");
-		div.type = "text";
-		divBig.appendChild(div);
+		const containerWithCode = document.createElement('textarea');
+		containerWithCode.setAttribute("value", `${code}`)
+		containerWithCode.classList.add("small")
+		divBig.appendChild(containerWithCode)
 	
         const elo = document.getElementsByClassName("small")[number];
-		const el = document.createElement('button');
-		el.innerText = "Kopiuj";
-		el.classList.add("copy");
-
-		div.before(el);
-		number++;
+		const el = document.createElement('button')
+		el.innerText = "Kopiuj"
+		el.classList.add("copy")
+		containerWithCode.before(el)
+		number++
 
 		const copyText = () => {
 			const sth = document.querySelector(".small");
-			console.log(sth);
-			sth.select();
-			sth.execCommand("copy")
-		};
-		el.addEventListener('click', copyText);
-
-			let indexText = 0;
+			sth.select()
+			document.execCommand("copy")
+			}
+			document.addEventListener('click', copyText);
+			let indexText = 0
 			const typing = setInterval(() => {
-			div.textContent += code[indexText];
-			indexText += 1;
+			containerWithCode.textContent += code[indexText];
+			indexText += 1
 			if (indexText === 10) clearInterval(typing);
-		}, 100);
-		
-};
-};
-
-// const div = document.querySelector('div');
-// // div.innerText =
-// // const el = document.createElement('div');
-// // div.appendChild(el);
-// const clip = document.createElement('button');
-// clip.innerText = 'kopiuj';
-// // div.insertBefore(clip, el); 
-// div.appendChild(clip);
-// // console.log(clip);
-// // div.appendChild(clip);
-// console.log(section);};
+		}, 100)
+	}
+}
 btn.addEventListener('click', codesGenerator);
 
 

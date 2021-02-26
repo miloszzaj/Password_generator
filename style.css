@@ -43,7 +43,7 @@ section {
     justify-content: center ;
     align-content: center; 
     border: 1px solid rgb(0, 0, 0);
-    background-color: rgb(116, 93, 168);
+    background-color: rgb(183, 155, 245);
     padding: 5px;
     border-radius: 5px;
 }
@@ -69,6 +69,16 @@ section {
 }
 
 @media (max-width: 700px) {
+body {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+.btn {
+    grid-area: 1 / 1 / 2 / 3; 
+}
+section {
+    grid-area: 2 / 1 / 7 / 3;
+}
     .copy {
         font-size: 15px;
     }
