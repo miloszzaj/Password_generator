@@ -34,7 +34,7 @@ const codesGenerator = () => {
 		number++
 
 		const copyText = () => {
-			const sth = document.querySelector(".small");
+			const sth = divBig.querySelector(".small");
 			sth.select()
 			document.execCommand("copy")
 			}
@@ -47,6 +47,19 @@ const codesGenerator = () => {
 		}, 100)
 	}
 }
+
+
+// const div = document.querySelector('div');
+// // div.innerText =
+// // const el = document.createElement('div');
+// // div.appendChild(el);
+// const clip = document.createElement('button');
+// clip.innerText = 'kopiuj';
+// // div.insertBefore(clip, el); 
+// div.appendChild(clip);
+// // console.log(clip);
+// // div.appendChild(clip);
+// console.log(section);};
 btn.addEventListener('click', codesGenerator);
 
 
