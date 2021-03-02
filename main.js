@@ -22,8 +22,9 @@ const codesGenerator = () => {
 		section.appendChild(divBig)
 
 		const containerWithCode = document.createElement('textarea');
-		containerWithCode.setAttribute("value", `${code}`)
+		// containerWithCode.setAttribute("value", code)
 		containerWithCode.classList.add("small")
+		containerWithCode.setAttribute("row", 1)
 		divBig.appendChild(containerWithCode)
 	
         const elo = document.getElementsByClassName("small")[number];
@@ -38,7 +39,7 @@ const codesGenerator = () => {
 			sth.select()
 			document.execCommand("copy")
 			}
-			document.addEventListener('click', copyText);
+			el.addEventListener('click', copyText);
 			let indexText = 0
 			const typing = setInterval(() => {
 			containerWithCode.textContent += code[indexText];
@@ -49,17 +50,6 @@ const codesGenerator = () => {
 }
 
 
-// const div = document.querySelector('div');
-// // div.innerText =
-// // const el = document.createElement('div');
-// // div.appendChild(el);
-// const clip = document.createElement('button');
-// clip.innerText = 'kopiuj';
-// // div.insertBefore(clip, el); 
-// div.appendChild(clip);
-// // console.log(clip);
-// // div.appendChild(clip);
-// console.log(section);};
 btn.addEventListener('click', codesGenerator);
 
 
