@@ -17,29 +17,29 @@ const codesGenerator = () => {
 		}
 		console.log(code)
 
-		const divBig = document.createElement('div')
-		divBig.classList.add("big")
-		section.appendChild(divBig)
+		const containerInSection = document.createElement('div')
+		containerInSection.classList.add("big")
+		section.appendChild(containerInSection)
 
 		const containerWithCode = document.createElement('textarea');
 		// containerWithCode.setAttribute("value", code)
 		containerWithCode.classList.add("small")
 		containerWithCode.setAttribute("row", 1)
-		divBig.appendChild(containerWithCode)
+		containerInSection.appendChild(containerWithCode)
 	
-        const elo = document.getElementsByClassName("small")[number];
-		const el = document.createElement('button')
-		el.innerText = "Kopiuj"
-		el.classList.add("copy")
-		containerWithCode.before(el)
+        const element = document.getElementsByClassName("small")[number];
+		const copyBtn = document.createElement('button')
+		copyBtn.innerText = "Kopiuj"
+		copyBtn.classList.add("copy")
+		containerWithCode.before(copyBtn)
 		number++
 
 		const copyText = () => {
-			const sth = divBig.querySelector(".small");
-			sth.select()
+			const copyContainer = containerInSection.querySelector(".small");
+			copyContainer.select()
 			document.execCommand("copy")
 			}
-			el.addEventListener('click', copyText);
+			copyBtn.addEventListener('click', copyText);
 			let indexText = 0
 			const typing = setInterval(() => {
 			containerWithCode.textContent += code[indexText];
@@ -48,8 +48,6 @@ const codesGenerator = () => {
 		}, 100)
 	}
 }
-
-
 btn.addEventListener('click', codesGenerator);
 
 
